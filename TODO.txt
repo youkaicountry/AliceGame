@@ -1,0 +1,3 @@
+-add bullet clipping if offscreen
+-add status bar to right
+-add bullet collision with play/death

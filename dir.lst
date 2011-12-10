@@ -1,0 +1,5 @@
+g++.exe: libIrrlicht.a: No such file or directory
+Reading specs from e:/devc610/bin/../lib/gcc/mingw32/3.4.2/specs
+Configured with: ../gcc/configure --with-gcc --with-gnu-ld --with-gnu-as --host=mingw32 --target=mingw32 --prefix=/mingw --enable-threads --disable-nls --enable-languages=c,c++,f77,ada,objc,java --disable-win32-registry --disable-shared --enable-sjlj-exceptions --enable-libgcj --disable-java-awt --without-x --enable-java-gc=boehm --disable-libgcj-debug --enable-interpreter --enable-hash-synchronization --enable-libstdcxx-debug
+Thread model: win32
+gcc version 3.4.2 (mingw-special)

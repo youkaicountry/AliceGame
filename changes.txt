@@ -1,0 +1,52 @@
+Changes by Ben, 11/26/2006:
+
+1.  Wrote the project with wxDev-C++ 6.10.  The .dev file may not be
+compatible with plain Dev-C++ anymore.  So you may need to re-create the .dev
+file from scratch, or use an old one, or use wxDev-C++.
+
+2.  Figured out the library difficulties we were having way back when.  If
+you want to include a library libxyz.a in your project, you need to add the
+library to your library path and -lxyz to the linker command line (it
+automatically appends the "lib" prefix and ".a" suffix).  So now -lIrrlicht
+is in the linker command line dialog.  You may have to add the path to Irrlicht
+(mine is E:\DEVC4992\irrlicht-1.1\lib\Win32-gcc) to the library path (I add it
+to the global compiler settings under Tools / Compiler options / Directories /
+Libraries).
+
+3.  The explosion effect is now a method in gamespace.  update now takes
+a game state parameter, which it can modify.  The basic idea is to make death
+behavior of enemies customizable, what happens when an enemy dies should be
+scripted for each individual enemy (with a rational default choice of course),
+not a global behavior specified in the game engine.
+
+4. Added -Wno-deprecated to the compiler command line in my global settings
+to disable the annoying warnings.  I highly recommend you do the same.
+
+5. Added abbreviated class declarations before #include's to avoid circular
+dependency between gamespace.h and enemybase.h
+
+6. I was getting a mysterious crash, so I used the debugger and consulted
+the Internet.  My findings were summarized here:
+
+http://www.codersource.net/cpp_virtual_destructors.html
+
+Basically, unlike other functions, if a destructor is virtual then both the
+base and derived destructors are called.  Thus classes like leftfodder
+and rightfodder, which clean up the same members in both destructors,
+are in fact incorrect.  I fixed those two classes.
+
+7. Added isVisible() and isHittable() member functions to the Enemy class.
+I chose member functions rather than member variables because
+(a) it's regarded as good OO practice to have accessor methods
+(b) fields would need initialized and updated, which means changing code for
+existing enemies; I can just return the negation of the dead flag by default
+(c) it better supports future complex, scriptable behavior than a field does
+(d) it increases modularity by putting the visibility / hittability computation
+in its own method
+
+8. I just realized that the "active" flag does more-or-less what I want.  Now
+isVisible() and isHittable() use it rather than the negation of the "dead" flag.
+
+9. Changed gamespace.cpp to use isVisible() and isHittable() to determine
+whether to show an enemy sprite or allow an enemy to be hit.  Now the active
+flag is used solely by the physics engine in Enemy.

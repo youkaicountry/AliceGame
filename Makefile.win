@@ -1,0 +1,108 @@
+# Project: Project1
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 6.10.2 on 02/07/07 20:55
+
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = windres.exe
+OBJ       = obj/shooter.o obj/player.o obj/bullet.o obj/gamespace.o obj/item.o obj/scoreitem.o obj/pointitem.o obj/spritenote.o obj/keystate.o obj/TimeSensor.o obj/barrage.o obj/twovector.o obj/aiplayer.o obj/star.o obj/dna.o obj/random.o obj/Linear.o obj/generation.o obj/genepool.o obj/cwaypoint.o obj/neoenemy.o obj/aevent.o obj/pather.o obj/gameobject.o obj/neobullet.o obj/shooter_private.res
+LINKOBJ   = obj/shooter.o obj/player.o obj/bullet.o obj/gamespace.o obj/item.o obj/scoreitem.o obj/pointitem.o obj/spritenote.o obj/keystate.o obj/TimeSensor.o obj/barrage.o obj/twovector.o obj/aiplayer.o obj/star.o obj/dna.o obj/random.o obj/Linear.o obj/generation.o obj/genepool.o obj/cwaypoint.o obj/neoenemy.o obj/aevent.o obj/pather.o obj/gameobject.o obj/neobullet.o obj/shooter_private.res
+LIBS      = -L"H:/CPP/wxdevcpp6.10/Lib" RDTSC.OBJ ../../irrlicht-1.3/lib/Win32-gcc/libIrrlicht.a ../../lua51/lib/liblua.a  -s 
+INCS      = -I"include" -I"H:/CPP/irrlicht-1.3/include" -I"H:/CPP/lua51/include"
+CXXINCS   = -I"H:/CPP/wxdevcpp6.10/lib/gcc/mingw32/3.4.2/include" -I"H:/CPP/wxdevcpp6.10/include/c++/3.4.2/backward" -I"H:/CPP/wxdevcpp6.10/include/c++/3.4.2/mingw32" -I"H:/CPP/wxdevcpp6.10/include/c++/3.4.2" -I"H:/CPP/wxdevcpp6.10/include" -I"H:/CPP/wxdevcpp6.10/" -I"H:/CPP/wxdevcpp6.10/include/common/wx/msw" -I"H:/CPP/wxdevcpp6.10/include/common/wx/generic" -I"H:/CPP/wxdevcpp6.10/include/common/wx/fl" -I"H:/CPP/wxdevcpp6.10/include/common/wx/gizmos" -I"H:/CPP/wxdevcpp6.10/include/common/wx/html" -I"H:/CPP/wxdevcpp6.10/include/common/wx/mmedia" -I"H:/CPP/wxdevcpp6.10/include/common/wx/net" -I"H:/CPP/wxdevcpp6.10/include/common/wx/ogl" -I"H:/CPP/wxdevcpp6.10/include/common/wx/plot" -I"H:/CPP/wxdevcpp6.10/include/common/wx/protocol" -I"H:/CPP/wxdevcpp6.10/include/common/wx/stc" -I"H:/CPP/wxdevcpp6.10/include/common/wx/svg" -I"H:/CPP/wxdevcpp6.10/include/common/wx/xml" -I"H:/CPP/wxdevcpp6.10/include/common/wx/xrc" -I"H:/CPP/wxdevcpp6.10/include/common/wx" -I"H:/CPP/wxdevcpp6.10/include/common" -I"H:/CPP/irrlicht-1.3/include" -I"H:/CPP/lua51/include"
+RCINCS    = --include-dir "H:/CPP/WXDEVC~1.10/include/common"
+BIN       = BIN/AliceGame.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES) -Wno-deprecated   -fexpensive-optimizations -O3
+CFLAGS    = $(INCS) $(DEFINES)   -fexpensive-optimizations -O3
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "BIN\AliceGame.exe" $(LIBS)
+
+obj/shooter.o: $(GLOBALDEPS) shooter.cpp player.h bullet.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h spritenote.h keystate.h irrevent.h timesensor.h aiplayer.h keystate.h random.h gamespace.h player.h dna.h random.h random.h dna.h generation.h random.h dna.h genepool.h random.h dna.h pather.h twovector.h
+	$(CPP) -c shooter.cpp -o obj/shooter.o $(CXXFLAGS)
+
+obj/player.o: $(GLOBALDEPS) player.cpp player.h
+	$(CPP) -c player.cpp -o obj/player.o $(CXXFLAGS)
+
+obj/bullet.o: $(GLOBALDEPS) bullet.cpp twovector.h bullet.h
+	$(CPP) -c bullet.cpp -o obj/bullet.o $(CXXFLAGS)
+
+obj/gamespace.o: $(GLOBALDEPS) gamespace.cpp player.h keystate.h barrage.h bullet.h player.h twovector.h random.h item.h player.h cwaypoint.h neoenemy.h cwaypoint.h bullet.h player.h gamespace.h bullet.h player.h item.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h pather.h twovector.h gameobject.h bullet.h player.h gamespace.h pather.h cwaypoint.h gameobject.h pather.h pather.h bullet.h neoenemy.h gamespace.h neobullet.h gameobject.h cwaypoint.h bullet.h player.h gamespace.h
+	$(CPP) -c gamespace.cpp -o obj/gamespace.o $(CXXFLAGS)
+
+obj/item.o: $(GLOBALDEPS) item.cpp item.h player.h player.h
+	$(CPP) -c item.cpp -o obj/item.o $(CXXFLAGS)
+
+obj/scoreitem.o: $(GLOBALDEPS) scoreitem.cpp player.h scoreitem.h player.h item.h player.h
+	$(CPP) -c scoreitem.cpp -o obj/scoreitem.o $(CXXFLAGS)
+
+obj/pointitem.o: $(GLOBALDEPS) pointitem.cpp player.h pointitem.h player.h item.h player.h
+	$(CPP) -c pointitem.cpp -o obj/pointitem.o $(CXXFLAGS)
+
+obj/spritenote.o: $(GLOBALDEPS) spritenote.cpp spritenote.h
+	$(CPP) -c spritenote.cpp -o obj/spritenote.o $(CXXFLAGS)
+
+obj/keystate.o: $(GLOBALDEPS) keystate.cpp keystate.h
+	$(CPP) -c keystate.cpp -o obj/keystate.o $(CXXFLAGS)
+
+obj/TimeSensor.o: $(GLOBALDEPS) TimeSensor.CPP TimeSensor.h
+	$(CPP) -c TimeSensor.CPP -o obj/TimeSensor.o $(CXXFLAGS)
+
+obj/barrage.o: $(GLOBALDEPS) barrage.cpp barrage.h bullet.h player.h twovector.h bullet.h player.h
+	$(CPP) -c barrage.cpp -o obj/barrage.o $(CXXFLAGS)
+
+obj/twovector.o: $(GLOBALDEPS) twovector.cpp twovector.h
+	$(CPP) -c twovector.cpp -o obj/twovector.o $(CXXFLAGS)
+
+obj/aiplayer.o: $(GLOBALDEPS) aiplayer.cpp keystate.h random.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h twovector.h player.h enemybase.h barrage.h bullet.h player.h bullet.h gamespace.h dna.h random.h neoenemy.h aiplayer.h keystate.h random.h gamespace.h player.h dna.h neobullet.h gameobject.h cwaypoint.h bullet.h player.h gamespace.h
+	$(CPP) -c aiplayer.cpp -o obj/aiplayer.o $(CXXFLAGS)
+
+obj/star.o: $(GLOBALDEPS) star.cpp star.h
+	$(CPP) -c star.cpp -o obj/star.o $(CXXFLAGS)
+
+obj/dna.o: $(GLOBALDEPS) dna.cpp dna.h random.h random.h
+	$(CPP) -c dna.cpp -o obj/dna.o $(CXXFLAGS)
+
+obj/random.o: $(GLOBALDEPS) random.cpp Random.h rdtsc.h
+	$(CPP) -c random.cpp -o obj/random.o $(CXXFLAGS)
+
+obj/Linear.o: $(GLOBALDEPS) Linear.cpp Linear.h
+	$(CPP) -c Linear.cpp -o obj/Linear.o $(CXXFLAGS)
+
+obj/generation.o: $(GLOBALDEPS) generation.cpp generation.h random.h dna.h random.h random.h dna.h aiplayer.h keystate.h random.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h player.h dna.h keystate.h gamespace.h
+	$(CPP) -c generation.cpp -o obj/generation.o $(CXXFLAGS)
+
+obj/genepool.o: $(GLOBALDEPS) genepool.cpp genepool.h random.h dna.h random.h random.h dna.h aiplayer.h keystate.h random.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h player.h dna.h keystate.h gamespace.h
+	$(CPP) -c genepool.cpp -o obj/genepool.o $(CXXFLAGS)
+
+obj/cwaypoint.o: $(GLOBALDEPS) cwaypoint.cpp neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h pather.h twovector.h pather.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h gameobject.h cwaypoint.h
+	$(CPP) -c cwaypoint.cpp -o obj/cwaypoint.o $(CXXFLAGS)
+
+obj/neoenemy.o: $(GLOBALDEPS) neoenemy.cpp neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h pather.h twovector.h pather.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h twovector.h gamespace.h bullet.h player.h scoreitem.h player.h item.h pointitem.h player.h item.h cwaypoint.h
+	$(CPP) -c neoenemy.cpp -o obj/neoenemy.o $(CXXFLAGS)
+
+obj/aevent.o: $(GLOBALDEPS) aevent.cpp aevent.h
+	$(CPP) -c aevent.cpp -o obj/aevent.o $(CXXFLAGS)
+
+obj/pather.o: $(GLOBALDEPS) pather.cpp pather.h twovector.h TwoVector.h
+	$(CPP) -c pather.cpp -o obj/pather.o $(CXXFLAGS)
+
+obj/gameobject.o: $(GLOBALDEPS) gameobject.cpp twovector.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h bullet.h player.h scoreitem.h player.h item.h pointitem.h player.h item.h cwaypoint.h GameObject.h twovector.h neobullet.h gameobject.h cwaypoint.h bullet.h player.h gamespace.h
+	$(CPP) -c gameobject.cpp -o obj/gameobject.o $(CXXFLAGS)
+
+obj/neobullet.o: $(GLOBALDEPS) neobullet.cpp twovector.h gamespace.h bullet.h player.h item.h player.h spritenote.h keystate.h star.h random.h neoenemy.h cwaypoint.h neoenemy.h gameobject.h bullet.h player.h gamespace.h pather.h twovector.h cwaypoint.h pather.h bullet.h player.h gamespace.h gameobject.h cwaypoint.h pather.h bullet.h player.h scoreitem.h player.h item.h pointitem.h player.h item.h cwaypoint.h neobullet.h gameobject.h cwaypoint.h bullet.h player.h gamespace.h
+	$(CPP) -c neobullet.cpp -o obj/neobullet.o $(CXXFLAGS)
+
+obj/shooter_private.res: obj/shooter_private.rc 
+	$(WINDRES) --input-format=rc -o obj/shooter_private.res $(RCINCS) obj/SHOOTE~1.RC -O coff

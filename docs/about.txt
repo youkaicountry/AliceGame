@@ -1,0 +1,2 @@
+a verticle shooter with customizable AI and genetic 
+AI creation.

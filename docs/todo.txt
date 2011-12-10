@@ -1,0 +1,9 @@
+lua scripting
+camera controls
+3d models
+xml for settings (3d/2d/flat, software/opengl, gen algorithm settings, dynamiccam)
+rozen maiden gfx
+output genetics to csv file
+save milestones
+
+XXX pool algorithm (del method worst/random, jostle mutate/random mutate percent)
